@@ -1,0 +1,49 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "material": {
+          "certpath": "C:\\Users\\lixinrui\\.ohos\\config\\openharmony\\auto_ohos_default_OHWantExample_com.example.ohwantexample.cer",
+          "storePassword": "0000001B35F16A0E25DEDB6F41B8CDF5DDE53D56D4937E5F14D13F6EED1F164C7EFD3701634D9151234C8B",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001BFDCB42C4B7032C5D9AB3FF5B28503F408A51EF4655B08205EA2BF2C63F17E6A1573BA44FF24373",
+          "profile": "C:\\Users\\lixinrui\\.ohos\\config\\openharmony\\auto_ohos_default_OHWantExample_com.example.ohwantexample.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\lixinrui\\.ohos\\config\\openharmony\\auto_ohos_default_OHWantExample_com.example.ohwantexample.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compileSdkVersion": 10,
+        "compatibleSdkVersion": 10,
+        "runtimeOS": "OpenHarmony",
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}

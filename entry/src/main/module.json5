@@ -58,6 +58,26 @@
             ]
           }
         ]
+      },
+      {
+        "name": "TestImplicitIntent",
+        "srcEntry": "./ets/testimplicitintent/TestImplicitIntent.ets",
+        "description": "$string:TestImplicitIntent_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestImplicitIntent_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true,
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ]
       }
     ],
     "requestPermissions": [

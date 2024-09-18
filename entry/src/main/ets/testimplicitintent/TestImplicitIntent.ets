@@ -8,9 +8,9 @@ import fs from '@ohos.file.fs';
 import wantConstant from '@ohos.app.ability.wantConstant';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import createImageFile  from '../tools/ImageTool';
+import createImageFile  from '../tools/ImageTool'
 
-export default class TestExplicitIntent extends UIAbility {
+export default class TestImplicitIntent extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
     this.createImageFileAndSendWant();
@@ -20,12 +20,11 @@ export default class TestExplicitIntent extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
   }
 
-
   onWindowStageCreate(windowStage: window.WindowStage): void {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/ExplicitIntentIndex', (err, data) => {
+    windowStage.loadContent('pages/ImplicitIntentIndex', (err, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
         return;
@@ -34,7 +33,6 @@ export default class TestExplicitIntent extends UIAbility {
     });
   }
 
-  // 创建 img.jpg 文件并发送 Want
   private createImageFileAndSendWant(): void {
     // 创建 img.jpg 文件用于测试
     const imgPath = createImageFile(this.context);
@@ -44,9 +42,7 @@ export default class TestExplicitIntent extends UIAbility {
 
     // 创建显式 Want 并设置目标组件
     const want: Want = {
-      // 设置目标组件
-      bundleName: 'com.example.ohwantexample', // 目标应用的包名
-      abilityName: 'EntryAbility', // 目标 Ability 的名称
+      action: 'ohos.want.action.sendData',
       // 配置被分享文件的读写权限
       flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION,
       // 配置分享应用的隐式拉起规则
@@ -61,8 +57,6 @@ export default class TestExplicitIntent extends UIAbility {
       console.error(`启动接收方组件失败，错误码: ${err.code}, 错误信息: ${err.message}`);
     });
   }
-
-  // 创建 img.jpg 文件，返回文件路径
 
   onWindowStageDestroy(): void {
     // Main window is destroyed, release UI related resources

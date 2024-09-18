@@ -19,6 +19,14 @@
     {
       "name": "TestExplicitIntent_label",
       "value": "label"
+    },
+    {
+      "name": "TestImplicitIntent_desc",
+      "value": "description"
+    },
+    {
+      "name": "TestImplicitIntent_label",
+      "value": "label"
     }
   ]
 }

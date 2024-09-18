@@ -1,7 +1,7 @@
 @Entry
 @Component
-struct ExplicitIntentIndex {
-  @State message: string = 'This is Explicit Intent Index';
+struct ImplicitIntentIndex {
+  @State message: string = 'This is Implicit Want Index';
 
   build() {
     Row() {

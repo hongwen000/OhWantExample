@@ -49,7 +49,6 @@ export default class TestExplicitIntent extends UIAbility {
       // 配置被分享文件的读写权限
       flags: wantConstant.Flags.FLAG_AUTH_READ_URI_PERMISSION,
       // 配置分享应用的隐式拉起规则
-      action: 'ohos.want.action.sendData',
       uri: imgUri,
       type: 'image/jpeg',
     };
